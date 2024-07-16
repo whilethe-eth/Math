@@ -1,0 +1,50 @@
+import math
+
+# Функция для вычисления суммы чисел от 1 до n
+def sum_of_numbers(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i
+    return total
+
+# Функция для проверки, является ли число простым
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Вычисление факториала числа
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Проверка на четность
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+# Пример использования функций
+n = 10
+print(f"Сумма чисел от 1 до {n}: {sum_of_numbers(n)}")
+
+num = 17
+if is_prime(num):
+    print(f"{num} - простое число")
+else:
+    print(f"{num} - составное число")
+
+x = 5
+print(f"Факториал числа {x}: {factorial(x)}")
+
+y = 7
+if is_even(y):
+    print(f"{y} - четное число")
+else:
+    print(f"{y} - нечетное число")
